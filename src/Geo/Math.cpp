@@ -1,6 +1,6 @@
 /**
  * \file Math.cpp
- * \brief Implementation for GeographicLib2::Math class
+ * \brief Implementation for GeographicLib::Math class
  *
  * Copyright (c) Charles Karney (2015-2019) <charles@karney.com> and licensed
  * under the MIT/X11 License.  For more information, see
@@ -14,7 +14,7 @@
 #  pragma warning (disable: 4127)
 #endif
 
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   using namespace std;
 
@@ -594,4 +594,4 @@ namespace GeographicLib2 {
   template int GEOGRAPHICLIB_EXPORT Math::infinity<int>();
   /// \endcond
 
-} // namespace GeographicLib2
+} // namespace GeographicLib

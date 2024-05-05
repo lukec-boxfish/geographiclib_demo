@@ -1,6 +1,6 @@
 /**
  * \file UTMUPS.cpp
- * \brief Implementation for GeographicLib2::UTMUPS class
+ * \brief Implementation for GeographicLib::UTMUPS class
  *
  * Copyright (c) Charles Karney (2008-2019) <charles@karney.com> and licensed
  * under the MIT/X11 License.  For more information, see
@@ -13,7 +13,7 @@
 #include "TransverseMercator.hpp"
 #include "Utility.hpp"
 
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   using namespace std;
 
@@ -175,11 +175,11 @@ namespace GeographicLib2 {
     if (zonein != zoneout) {
       // Determine lat, lon
       real lat, lon;
-      GeographicLib2::UTMUPS::Reverse(zonein, northpin, xin, yin, lat, lon);
+      GeographicLib::UTMUPS::Reverse(zonein, northpin, xin, yin, lat, lon);
       // Try converting to zoneout
       real x, y;
       int zone1;
-      GeographicLib2::UTMUPS::Forward(lat, lon, zone1, northp, x, y,
+      GeographicLib::UTMUPS::Forward(lat, lon, zone1, northp, x, y,
                                      zoneout == UTMUPS::MATCH
                                      ? zonein : zoneout);
       if (zone1 == 0 && northp != northpout)
@@ -294,4 +294,4 @@ namespace GeographicLib2 {
 
   Math::real UTMUPS::UTMShift() { return real(MGRS::utmNshift_); }
 
-} // namespace GeographicLib2
+} // namespace GeographicLib

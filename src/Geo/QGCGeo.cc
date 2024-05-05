@@ -9,7 +9,6 @@
 
 #include <QDebug>
 #include <QString>
-#include <QtMath>
 
 #include <cmath>
 #include <limits>
@@ -91,7 +90,7 @@ int convertGeoToUTM(const QGeoCoordinate& coord, double& easting, double& northi
     try {
         int zone;
         bool northp;
-        GeographicLib2::UTMUPS::Forward(coord.latitude(), coord.longitude(), zone, northp, easting, northing);
+        GeographicLib::UTMUPS::Forward(coord.latitude(), coord.longitude(), zone, northp, easting, northing);
         return zone;
     } catch(...) {
         return 0;
@@ -102,7 +101,7 @@ bool convertUTMToGeo(double easting, double northing, int zone, bool southhemi, 
 {
     double lat, lon;
     try {
-        GeographicLib2::UTMUPS::Reverse(zone, !southhemi, easting, northing, lat, lon);
+        GeographicLib::UTMUPS::Reverse(zone, !southhemi, easting, northing, lat, lon);
     } catch(...) {
         return false;
     }
@@ -120,8 +119,8 @@ QString convertGeoToMGRS(const QGeoCoordinate& coord)
     std::string mgrs;
 
     try {
-        GeographicLib2::UTMUPS::Forward(coord.latitude(), coord.longitude(), zone, northp, x, y);
-        GeographicLib2::MGRS::Forward(zone, northp, x, y, coord.latitude(), 5, mgrs);
+        GeographicLib::UTMUPS::Forward(coord.latitude(), coord.longitude(), zone, northp, x, y);
+        GeographicLib::MGRS::Forward(zone, northp, x, y, coord.latitude(), 5, mgrs);
     } catch(...) {
         mgrs = "";
     }
@@ -145,8 +144,8 @@ bool convertMGRSToGeo(QString mgrs, QGeoCoordinate& coord)
     double lat, lon;
 
     try {
-        GeographicLib2::MGRS::Reverse(mgrs.simplified().replace(" ", "").toStdString(), zone, northp, x, y, prec);
-        GeographicLib2::UTMUPS::Reverse(zone, northp, x, y, lat, lon);
+        GeographicLib::MGRS::Reverse(mgrs.simplified().replace(" ", "").toStdString(), zone, northp, x, y, prec);
+        GeographicLib::UTMUPS::Reverse(zone, northp, x, y, lat, lon);
     } catch(...) {
         return false;
     }

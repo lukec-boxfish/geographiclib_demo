@@ -1,6 +1,6 @@
 /**
  * \file MGRS.hpp
- * \brief Header for GeographicLib2::MGRS class
+ * \brief Header for GeographicLib::MGRS class
  *
  * Copyright (c) Charles Karney (2008-2019) <charles@karney.com> and licensed
  * under the MIT/X11 License.  For more information, see
@@ -19,7 +19,7 @@
 #  pragma warning (disable: 4251)
 #endif
 
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   /**
    * \brief Convert between UTM/UPS and %MGRS
@@ -352,7 +352,7 @@ namespace GeographicLib2 {
 
   };
 
-} // namespace GeographicLib2
+} // namespace GeographicLib
 
 #if defined(_MSC_VER)
 #  pragma warning (pop)

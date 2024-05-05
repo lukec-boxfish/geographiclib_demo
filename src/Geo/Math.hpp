@@ -1,6 +1,6 @@
 /**
  * \file Math.hpp
- * \brief Header for GeographicLib2::Math class
+ * \brief Header for GeographicLib::Math class
  *
  * Copyright (c) Charles Karney (2008-2019) <charles@karney.com> and licensed
  * under the MIT/X11 License.  For more information, see
@@ -46,7 +46,7 @@
 
 #if !defined(GEOGRAPHICLIB_PRECISION)
 /**
- * The precision of floating point numbers used in %GeographicLib2.  1 means
+ * The precision of floating point numbers used in %GeographicLib.  1 means
  * float (single precision); 2 (the default) means double; 3 means long double;
  * 4 is reserved for quadruple precision.  Nearly all the testing has been
  * carried out with doubles and that's the recommended configuration.  In order
@@ -75,7 +75,7 @@
 // Signal a convergence failure with multiprec types by throwing an exception
 // at loop exit.
 #define GEOGRAPHICLIB_PANIC \
-  (throw GeographicLib2::GeographicErr("Convergence failure"), false)
+  (throw GeographicLib::GeographicErr("Convergence failure"), false)
 #else
 #define GEOGRAPHICLIB_VOLATILE volatile
 // Ignore convergence failures with standard floating points types by allowing
@@ -83,14 +83,14 @@
 #define GEOGRAPHICLIB_PANIC false
 #endif
 
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   /**
-   * \brief Mathematical functions needed by %GeographicLib2
+   * \brief Mathematical functions needed by %GeographicLib
    *
    * Define mathematical functions in order to localize system dependencies and
    * to provide generic versions of the functions.  In addition define a real
-   * type to be used by %GeographicLib2.
+   * type to be used by %GeographicLib.
    *
    * Example of use:
    * \include example-Math.cpp
@@ -113,7 +113,7 @@ namespace GeographicLib2 {
 
 #if GEOGRAPHICLIB_PRECISION == 2
     /**
-     * The real type for %GeographicLib2. Nearly all the testing has been done
+     * The real type for %GeographicLib. Nearly all the testing has been done
      * with \e real = double.  However, the algorithms should also work with
      * float and long double (where available).  (<b>CAUTION</b>: reasonable
      * accuracy typically cannot be obtained using floats.)
@@ -642,6 +642,6 @@ namespace GeographicLib2 {
 
   };
 
-} // namespace GeographicLib2
+} // namespace GeographicLib
 
 #endif  // GEOGRAPHICLIB_MATH_HPP

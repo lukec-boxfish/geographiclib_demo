@@ -1,6 +1,6 @@
 /**
  * \file TransverseMercator.hpp
- * \brief Header for GeographicLib2::TransverseMercator class
+ * \brief Header for GeographicLib::TransverseMercator class
  *
  * Copyright (c) Charles Karney (2008-2019) <charles@karney.com> and licensed
  * under the MIT/X11 License.  For more information, see
@@ -22,7 +22,7 @@
    (GEOGRAPHICLIB_PRECISION == 1 ? 4 : 8))
 #endif
 
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   /**
    * \brief Transverse Mercator projection
@@ -72,7 +72,7 @@ namespace GeographicLib2 {
    * the UTM projections.  A more complicated example is the British National
    * Grid (<a href="https://www.spatialreference.org/ref/epsg/7405/">
    * EPSG:7405</a>) which requires the use of a latitude of origin.  This is
-   * implemented by the GeographicLib2::OSGB class.
+   * implemented by the GeographicLib::OSGB class.
    *
    * This class also returns the meridian convergence \e gamma and scale \e k.
    * The meridian convergence is the bearing of grid north (the \e y axis)
@@ -201,6 +201,6 @@ namespace GeographicLib2 {
     static const TransverseMercator& UTM();
   };
 
-} // namespace GeographicLib2
+} // namespace GeographicLib
 
 #endif  // GEOGRAPHICLIB_TRANSVERSEMERCATOR_HPP

@@ -1,6 +1,6 @@
 /**
  * \file Constants.hpp
- * \brief Header for GeographicLib2::Constants class
+ * \brief Header for GeographicLib::Constants class
  *
  * Copyright (c) Charles Karney (2008-2019) <charles@karney.com> and licensed
  * under the MIT/X11 License.  For more information, see
@@ -25,7 +25,7 @@
 #include "Math.hpp"
 
 /**
- * @relates GeographicLib2::Constants
+ * @relates GeographicLib::Constants
  * Pack the version components into a single integer.  Users should not rely on
  * this particular packing of the components of the version number; see the
  * documentation for GEOGRAPHICLIB_VERSION, below.
@@ -33,8 +33,8 @@
 #define GEOGRAPHICLIB_VERSION_NUM(a,b,c) ((((a) * 10000 + (b)) * 100) + (c))
 
 /**
- * @relates GeographicLib2::Constants
- * The version of GeographicLib2 as a single integer, packed as MMmmmmpp where
+ * @relates GeographicLib::Constants
+ * The version of GeographicLib as a single integer, packed as MMmmmmpp where
  * MM is the major version, mmmm is the minor version, and pp is the patch
  * level.  Users should not rely on this particular packing of the components
  * of the version number.  Instead they should use a test such as \code
@@ -49,7 +49,7 @@
                            GEOGRAPHICLIB_VERSION_PATCH)
 
 /**
- * @relates GeographicLib2::Constants
+ * @relates GeographicLib::Constants
  * Is the C++11 static_assert available?
  **********************************************************************/
 #if !defined(GEOGRAPHICLIB_HAS_STATIC_ASSERT)
@@ -79,7 +79,7 @@
 #endif
 
 /**
- * @relates GeographicLib2::Constants
+ * @relates GeographicLib::Constants
  * A compile-time assert.  Use C++11 static_assert, if available.
  **********************************************************************/
 #if !defined(GEOGRAPHICLIB_STATIC_ASSERT)
@@ -95,7 +95,7 @@
   GEOGRAPHICLIB_SHARED_LIB
 #  if GEOGRAPHICLIB_SHARED_LIB > 1
 #    error GEOGRAPHICLIB_SHARED_LIB must be 0 or 1
-#  elif defined(GeographicLib2_SHARED_EXPORTS)
+#  elif defined(GeographicLib_SHARED_EXPORTS)
 #    define GEOGRAPHICLIB_EXPORT __declspec(dllexport)
 #  else
 #    define GEOGRAPHICLIB_EXPORT __declspec(dllimport)
@@ -123,16 +123,16 @@
 #include <string>
 
 /**
- * \brief Namespace for %GeographicLib2
+ * \brief Namespace for %GeographicLib
  *
- * All of %GeographicLib2 is defined within the GeographicLib2 namespace.  In
- * addition all the header files are included via %GeographicLib2/Class.hpp.
+ * All of %GeographicLib is defined within the GeographicLib namespace.  In
+ * addition all the header files are included via %GeographicLib/Class.hpp.
  * This minimizes the likelihood of conflicts with other packages.
  **********************************************************************/
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   /**
-   * \brief %Constants needed by %GeographicLib2
+   * \brief %Constants needed by %GeographicLib
    *
    * Define constants specifying the WGS84 ellipsoid, the UTM and UPS
    * projections, and various unit conversions.
@@ -389,7 +389,7 @@ namespace GeographicLib2 {
   };
 
   /**
-   * \brief Exception handling for %GeographicLib2
+   * \brief Exception handling for %GeographicLib
    *
    * A class to handle exceptions.  It's derived from std::runtime_error so it
    * can be caught by the usual catch clauses.
@@ -409,4 +409,4 @@ namespace GeographicLib2 {
     GeographicErr(const std::string& msg) : std::runtime_error(msg) {}
   };
 
-} // namespace GeographicLib2
+} // namespace GeographicLib

@@ -1,6 +1,6 @@
 /**
  * \file TransverseMercator.cpp
- * \brief Implementation for GeographicLib2::TransverseMercator class
+ * \brief Implementation for GeographicLib::TransverseMercator class
  *
  * Copyright (c) Charles Karney (2008-2017) <charles@karney.com> and licensed
  * under the MIT/X11 License.  For more information, see
@@ -38,7 +38,7 @@
 #include <complex>
 #include "TransverseMercator.hpp"
 
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   using namespace std;
 
@@ -593,4 +593,4 @@ namespace GeographicLib2 {
     k *= _k0;
   }
 
-} // namespace GeographicLib2
+} // namespace GeographicLib

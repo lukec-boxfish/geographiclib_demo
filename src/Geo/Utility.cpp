@@ -1,6 +1,6 @@
 /**
  * \file Utility.cpp
- * \brief Implementation for GeographicLib2::Utility class
+ * \brief Implementation for GeographicLib::Utility class
  *
  * Copyright (c) Charles Karney (2011) <charles@karney.com> and licensed under
  * the MIT/X11 License.  For more information, see
@@ -15,7 +15,7 @@
 #  pragma warning (disable: 4996)
 #endif
 
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   using namespace std;
 
@@ -58,4 +58,4 @@ namespace GeographicLib2 {
     return Math::set_digits(ndigits);
   }
 
-} // namespace GeographicLib2
+} // namespace GeographicLib

@@ -1,6 +1,6 @@
 /**
  * \file MGRS.cpp
- * \brief Implementation for GeographicLib2::MGRS class
+ * \brief Implementation for GeographicLib::MGRS class
  *
  * Copyright (c) Charles Karney (2008-2017) <charles@karney.com> and licensed
  * under the MIT/X11 License.  For more information, see
@@ -10,7 +10,7 @@
 #include "MGRS.hpp"
 #include "Utility.hpp"
 
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   using namespace std;
 
@@ -460,4 +460,4 @@ namespace GeographicLib2 {
     }
   }
 
-} // namespace GeographicLib2
+} // namespace GeographicLib

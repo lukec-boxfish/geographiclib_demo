@@ -1,6 +1,6 @@
 /**
  * \file UTMUPS.hpp
- * \brief Header for GeographicLib2::UTMUPS class
+ * \brief Header for GeographicLib::UTMUPS class
  *
  * Copyright (c) Charles Karney (2008-2019) <charles@karney.com> and licensed
  * under the MIT/X11 License.  For more information, see
@@ -12,7 +12,7 @@
 
 #include "Constants.hpp"
 
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   /**
    * \brief Convert between geographic coordinates and UTM/UPS
@@ -28,7 +28,7 @@ namespace GeographicLib2 {
    * includes approximate algorithms for the computation of the underlying
    * transverse Mercator and polar stereographic projections.  Here we
    * substitute much more accurate algorithms given by
-   * GeographicLib2:TransverseMercator and GeographicLib2:PolarStereographic.
+   * GeographicLib:TransverseMercator and GeographicLib:PolarStereographic.
    * These are the algorithms recommended by the NGA document
    * - <a href="http://earth-info.nga.mil/GandG/publications/NGA_SIG_0012_2_0_0_UTMUPS/NGA.SIG.0012_2.0.0_UTMUPS.pdf">
    *   The Universal Grids and the Transverse Mercator and Polar Stereographic
@@ -59,7 +59,7 @@ namespace GeographicLib2 {
    *   UPS coordinate is legal.  A more systematic approach is taken here.
    * - The underlying projections are not very accurately implemented.
    *
-   * The GeographicLib2::UTMUPS::EncodeZone encodes the UTM zone and hemisphere
+   * The GeographicLib::UTMUPS::EncodeZone encodes the UTM zone and hemisphere
    * to allow UTM/UPS coordinated to be displayed as, for example, "38N 444500
    * 3688500".  According to NGA.SIG.0012_2.0.0_UTMUPS the use of "N" to denote
    * "north" in the context is not allowed (since a upper case letter in this
@@ -211,8 +211,8 @@ namespace GeographicLib2 {
      int zone;
      bool northp;
      double x, y, gamma, k;
-     GeographicLib2::UTMUPS::Forward(lat, lon, zone, northp, x, y, gamma, k);
-     GeographicLib2::UTMUPS::Transfer(zone, northp, x, y,
+     GeographicLib::UTMUPS::Forward(lat, lon, zone, northp, x, y, gamma, k);
+     GeographicLib::UTMUPS::Transfer(zone, northp, x, y,
                                      zone, true,   x, y, zone);
      northp = true;
      \endcode
@@ -423,6 +423,6 @@ namespace GeographicLib2 {
 
   };
 
-} // namespace GeographicLib2
+} // namespace GeographicLib
 
 #endif  // GEOGRAPHICLIB_UTMUPS_HPP

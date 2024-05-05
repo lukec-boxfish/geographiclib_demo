@@ -1,6 +1,6 @@
 /**
  * \file PolarStereographic.cpp
- * \brief Implementation for GeographicLib2::PolarStereographic class
+ * \brief Implementation for GeographicLib::PolarStereographic class
  *
  * Copyright (c) Charles Karney (2008-2017) <charles@karney.com> and licensed
  * under the MIT/X11 License.  For more information, see
@@ -9,7 +9,7 @@
 
 #include "PolarStereographic.hpp"
 
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   using namespace std;
 
@@ -106,4 +106,4 @@ namespace GeographicLib2 {
     _k0 *= k/kold;
   }
 
-} // namespace GeographicLib2
+} // namespace GeographicLib

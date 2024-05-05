@@ -1,6 +1,6 @@
 /**
  * \file Utility.hpp
- * \brief Header for GeographicLib2::Utility class
+ * \brief Header for GeographicLib::Utility class
  *
  * Copyright (c) Charles Karney (2011-2019) <charles@karney.com> and licensed
  * under the MIT/X11 License.  For more information, see
@@ -24,10 +24,10 @@
 #  pragma warning (disable: 4127 4996)
 #endif
 
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   /**
-   * \brief Some utility routines for %GeographicLib2
+   * \brief Some utility routines for %GeographicLib
    *
    * Example of use:
    * \include example-Utility.cpp
@@ -641,7 +641,7 @@ namespace GeographicLib2 {
      *
      * This only has an effect when GEOGRAPHICLIB_PRECISION = 5.  The
      * precision should only be set once and before calls to any other
-     * GeographicLib2 functions.  (Several functions, for example Math::pi(),
+     * GeographicLib functions.  (Several functions, for example Math::pi(),
      * cache the return value in a static local variable.  The precision needs
      * to be set before a call to any such functions.)  In multi-threaded
      * applications, it is necessary also to set the precision in each thread
@@ -695,7 +695,7 @@ namespace GeographicLib2 {
     throw GeographicErr("Cannot decode " + t + " as a bool");
   }
 
-} // namespace GeographicLib2
+} // namespace GeographicLib
 
 #if defined(_MSC_VER)
 #  pragma warning (pop)

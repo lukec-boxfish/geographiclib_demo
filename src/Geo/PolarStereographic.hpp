@@ -1,6 +1,6 @@
 /**
  * \file PolarStereographic.hpp
- * \brief Header for GeographicLib2::PolarStereographic class
+ * \brief Header for GeographicLib::PolarStereographic class
  *
  * Copyright (c) Charles Karney (2008-2019) <charles@karney.com> and licensed
  * under the MIT/X11 License.  For more information, see
@@ -12,7 +12,7 @@
 
 #include "Constants.hpp"
 
-namespace GeographicLib2 {
+namespace GeographicLib {
 
   /**
    * \brief Polar stereographic projection
@@ -155,6 +155,6 @@ namespace GeographicLib2 {
     static const PolarStereographic& UPS();
   };
 
-} // namespace GeographicLib2
+} // namespace GeographicLib
 
 #endif  // GEOGRAPHICLIB_POLARSTEREOGRAPHIC_HPP
